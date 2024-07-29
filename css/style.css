@@ -19,10 +19,31 @@ nav{
     justify-content: center;
     
 }
+.nav-link {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-link::after {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: '';
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
 .nav-start-img{
     display: flex;
     justify-content: center;
 }
+
 ul{
     list-style: none;
     text-transform: uppercase;
@@ -30,7 +51,10 @@ ul{
     gap: 30px;
     justify-content: center;
 }
-
+li a{
+    text-decoration: none;
+    color: black;
+}
 
 ul li {
     font-weight: 400;
@@ -41,9 +65,16 @@ ul li {
 .nav-img{
     display: flex;
     justify-content: center;
-    column-gap: 10px
+    column-gap: 10px;
+    cursor: pointer;
+}
+.nav-img img {
+    transition: transform 0.2s ease;
 }
 
+.nav-img img:hover {
+    transform: scale(1.1);
+}
 .leftContainer{
     grid-column: 1 / 2;
     padding: 20px;
@@ -51,7 +82,10 @@ ul li {
     flex-direction: column;
     justify-content: center;
 }
-
+.main-btn:hover{
+    background: floralwhite;
+    transform: scale(1.1);
+}
 .main-btn{
     border: 1px solid black;
     align-self: flex-start;
@@ -61,6 +95,7 @@ ul li {
     border-radius: 20px;
     margin-top: 20px;
     width: 170px;
+    transition: transform 0.2s ease
 }
 .container {
     display: grid;
@@ -121,12 +156,21 @@ ul li {
     gap: 30px;
     justify-content: center;
 }
+.imgProdust:hover{
+    transform: scale(1.1);
+}
+.rightPartOfImgStand img,
+.leftPartOfImgStand img{
+    transition: 0.5s;
+}
 .leftPartOfImgStand{
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 .rightPartOfImgStand{
     display: flex;
+    overflow: hidden;
 }
 
 .CardsHeader{
@@ -227,6 +271,105 @@ ul li {
 .bestProductCardBtn{
     align-self: center;
 }
+.ideasHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ideasHeaderTitle{
+    font-size: 42px;
+    line-height: 53px;
+    margin-top: 40px;
+}
+.ideasHeaderText{
+    margin: 10px 0 40px;
+    font-size: 13px;
+}
+.ideasContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+.ideasContainerText p{
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+.seeAll{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+.seeAll p{
+    font-size: 24px;
+}
+.search-container {
+    text-align: center;
+}
+
+
+.search-containerTitle{
+    font-size: 42px;
+    margin: 30px 0;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #C5C5C5;
+    border-radius: 25px;
+    background-color:  #F8F9FA;
+    width: 640px; 
+    transition: transform 0.2s ease
+}
+.search-box input:focus{
+    transform: scale(1.1);
+}
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    font-size: 14px;
+    background-color: #F8F9FA;
+    transition: transform 0.3s ease
+}
+
+.search-box img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.tags button {
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tags button:hover {
+    background-color: #e0e0e0;
+}
+.searchProducts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 @media (max-width: 1220px) {
     .container {
@@ -254,4 +397,15 @@ ul li {
     .CardsHeaderMainText p{
         font-size: 30px;
     }
+    .tags button{
+        padding: 8px 17px;
+    }
+    .search-box{
+        width: 530px;
+    }
+    body{
+        width: 100vh;
+    }
 }
+
+
